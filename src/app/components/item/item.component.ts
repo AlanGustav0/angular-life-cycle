@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,8 +9,8 @@ import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 })
 export class ItemComponent implements OnInit {
 
-  faPen = faPen;
-  faTrash = faTrash
+  faPen = faPen as IconProp;
+  faTrash = faTrash as IconProp;
 
   constructor() { }
 
