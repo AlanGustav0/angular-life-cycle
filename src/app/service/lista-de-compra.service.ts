@@ -1,4 +1,4 @@
-import { Item } from 'src/app/interfaces/iItem';
+import { Endereco, Item } from 'src/app/interfaces/iItem';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,12 +6,33 @@ import { Injectable } from '@angular/core';
 })
 export class ListaDeCompraService {
 
+
   private listaDeCompra: Item[] = [
     {
       "id": 1,
       "nome": "Queijo prato",
       "data": "Segunda-feira (31/10/2022) às 08:30",
-      "comprado": false
+      "comprado": false,
+      "novoItem":{
+        "texto":"Novo Texto",
+        "cnpj":"1234"
+      },
+      "endereco":[
+        {
+          "rua":"Rua Tres",
+          "numero": 1
+        },
+        {
+          "rua":"Rua Quatro",
+          "numero": 2
+        }
+      ],
+      "secretaria":[
+        {
+          "nome":"GOV BH",
+          "cnpj": "12456688"
+        }
+      ]
     },
     {
       "id": 2,
@@ -23,7 +44,13 @@ export class ListaDeCompraService {
       "id": 3,
       "nome": "Mamão papaia",
       "data": "Segunda-feira (31/10/2022) às 08:30",
-      "comprado": true
+      "comprado": true,
+      "secretaria":[
+        {
+          "nome":"GOV BH",
+          "cnpj": "12456688"
+        }
+      ]
     },
   ]
 
