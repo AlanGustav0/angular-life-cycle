@@ -10,6 +10,7 @@ import { ListaDeCompraService } from './service/lista-de-compra.service';
 export class AppComponent implements OnInit {
   title = 'app-lista-de-compras';
   listaDeCompras!: Array<Item>;
+  itemParaEditar!:Item;
   listaCompleta!:any;
   novaLista: Data[] = [];
   myList:any[] = [];
@@ -20,6 +21,10 @@ export class AppComponent implements OnInit {
     this.listaDeCompras = this._listaDeComprasService.getListaDeCompra();
     this.transformarLista();
     this.transformToListObjetc(this.novaLista);
+  }
+
+  editarItem(event:Item){
+    this.itemParaEditar = event;
   }
 
   transformarLista() {
