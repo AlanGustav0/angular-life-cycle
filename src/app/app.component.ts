@@ -24,6 +24,15 @@ export class AppComponent implements OnInit,DoCheck {
     this.itemParaEditar = event;
   }
 
+  deletarItem(idItem:number){
+    const index = this.listaDeCompras.findIndex(item => item.id == idItem);
+    this.listaDeCompras.splice(index,1);
+  }
+
+  limparLista(){
+    this.listaDeCompras = [];
+  }
+
   download() {
     const blob = new Blob([this.gerarCsv(this.listaDeCompras)], {
       type: 'text:csv;charset=utf-8',

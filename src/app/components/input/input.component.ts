@@ -23,12 +23,7 @@ export class InputComponent implements OnInit, OnChanges {
   constructor(private readonly _listaCompraService: ListaDeCompraService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['itemParaSerEditado'].currentValue == 'itemParaSerEditado') {
-      this.editando = true;
-      this.textoBtn = 'Editar item';
-      this.valorItem = this.itemParaSerEditado?.nome;
-    }
-    if (changes['itemComprado'].currentValue == 'itemComprado') {
+    if (!changes['itemParaSerEditado'].firstChange) {
       this.editando = true;
       this.textoBtn = 'Editar item';
       this.valorItem = this.itemParaSerEditado?.nome;
