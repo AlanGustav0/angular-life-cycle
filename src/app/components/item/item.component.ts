@@ -3,11 +3,10 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Item } from 'src/app/interfaces/iItem';
 
-
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit {
   @Input() item!: Item;
@@ -15,10 +14,14 @@ export class ItemComponent implements OnInit {
   faPen = faPen as IconProp;
   faTrash = faTrash as IconProp;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
-  editarItem(){
+  editarItem() {
     this.emitindoItem.emit(this.item);
+  }
+
+  checarItem(){
+    this.item.comprado = !this.item.comprado;
   }
 
 }

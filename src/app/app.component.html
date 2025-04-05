@@ -3,9 +3,18 @@
   <div class="container">
     <div class="lista">
       <h4 class="title-list">Lista de Compras</h4>
-      <div *ngFor="let item of listaDeCompras">
-        <app-item [item]="item" (emitindoItem)="editarItem($event)"></app-item>
+      <div *ngIf="listaDeCompras.length > 0;else naoTemItem">
+        <div *ngFor="let item of listaDeCompras">
+          <app-item
+            [item]="item"
+            (emitindoItem)="editarItem($event)"
+          ></app-item>
+        </div>
+        <button>Download</button>
       </div>
+      <ng-template #naoTemItem>
+        <small>Nenhum item na lista</small>
+      </ng-template>
     </div>
   </div>
 </section>
