@@ -50,18 +50,6 @@ small {
   grid-area: description;
 }
 
-.delete-icon {
-  justify-self: center;
-  align-self: center;
-  grid-area: delete-icon;
-}
-
-.edit-icon {
-  justify-self: center;
-  align-self: center;
-  grid-area: edit-icon;
-}
-
 .date {
   justify-self: start;
   grid-area: date;
@@ -84,4 +72,13 @@ small {
   border: 1px #4574e3 solid;
   padding: 1px 9px;
   border-radius: 9px;
+  cursor: pointer;
+}
+
+.btn{
+  background-color: transparent;
+  border: 1px #0b852f solid;
+  padding: 10px;
+  border-radius: 9px;
+  cursor: pointer;
 }
