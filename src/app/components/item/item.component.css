@@ -33,12 +33,14 @@ small {
   justify-self: center;
   align-self: center;
   grid-area: delete-icon;
+  cursor: pointer;
 }
 
 .edit-icon {
   justify-self: center;
   align-self: center;
   grid-area: edit-icon;
+  cursor: pointer;
 }
 
 .date {

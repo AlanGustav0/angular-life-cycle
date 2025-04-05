@@ -31,6 +31,7 @@ export class AppComponent implements OnInit,DoCheck {
 
   limparLista(){
     this.listaDeCompras = [];
+    this._listaDeComprasService.limparListaDeCompras();
   }
 
   download() {
@@ -47,13 +48,14 @@ export class AppComponent implements OnInit,DoCheck {
   }
 
   private gerarCsv(lista: any): string {
-    let header = Object.keys(lista).join(',');
-    let linha = Object.values(lista).join(',');
+    let header = Object.keys(lista[0]).join(',');
+    let linha = lista.map((item:string) => Object.values(item).join(','));
 
-    return [header, linha].join('\n');
+    return [header, ...linha].join('\n');
   }
 
   ngDoCheck(): void {
+    console.log('chamado')
     this._listaDeComprasService.atualizarLocalStorage();
   }
 }

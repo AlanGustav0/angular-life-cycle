@@ -47,6 +47,10 @@ export class ListaDeCompraService {
     //this.atualizarLocalStorage();
   }
 
+  limparListaDeCompras(){
+    this.listaDeCompra = [];
+  }
+
   atualizarLocalStorage(){
     localStorage.setItem('itens',JSON.stringify(this.listaDeCompra));
   }
